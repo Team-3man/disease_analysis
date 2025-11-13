@@ -66,5 +66,59 @@
 
 ---
 
+# 🔎 데이터 정보
+
+### 1️⃣ 기본 인구통계 정보
+- 주(State), 성별(Sex), 인종(RaceEthnicityCategory), 연령대(AgeCategory)
+
+### 2️⃣ 신체 데이터
+- 키(HeightInMeters), 체중(WeightInKilograms), BMI
+
+### 3️⃣ 생활습관 관련 변수
+- 수면시간(SleepHours)  
+- 흡연상태(SmokerStatus), 전자담배(ECigaretteUsage)  
+- 음주여부(AlcoholDrinkers)  
+- 신체활동(PhysicalActivities)  
+
+### 4️⃣ 건강상태 및 질환 정보
+- 심근경색(HadHeartAttack)  
+- 협심증(HadAngina)  
+- 뇌졸중(HadStroke)  
+- 천식(HadAsthma)  
+- COPD(HadCOPD)  
+- 우울장애(HadDepressiveDisorder)  
+- 신장질환(HadKidneyDisease)  
+- 당뇨병(HadDiabetes)  
+
+### 5️⃣ 검사·예방접종 정보
+- HIVTesting  
+- FluVaxLast12  
+- PneumoVaxEver  
+- TetanusLast10Tdap  
+
+### 6️⃣ 생활불편·정신건강 관련
+- PhysicalHealthDays  
+- MentalHealthDays  
+- GeneralHealth  
+
+---
+
+## 🔍 본 프로젝트에서 주요하게 사용하는 핵심 변수
+
+프로젝트 목적이 “생활습관 → 질병 비율/위험 패턴 분석”이므로  
+40개 중 아래 변수만 핵심 분석 대상으로 사용
+
+- **BMI(체중상태)**
+- **Sex(성별)**
+- **AgeCategory(연령대)**
+- **SleepHours(수면시간)**
+- **SmokerStatus(흡연여부)**
+- **AlcoholDrinkers(음주여부)**
+- **PhysicalActivities(운동 여부)**
+- **8개 주요 질병 변숫값**
+  - HadHeartAttack, HadAngina, HadStroke  
+  - HadAsthma, HadCOPD  
+  - HadDepressiveDisorder, HadKidneyDisease  
+  - HadDiabetes  
 
 
