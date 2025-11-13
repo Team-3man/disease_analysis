@@ -61,7 +61,7 @@
 ---
 
 # 📊 데이터 소개
-- 데이터 출처 : https://www.kaggle.com/datasets/kamilpytlak/personal-key-indicators-of-heart-disease
+- 데이터 출처 :[Kaggle - 2022 Heart Disease](https://www.kaggle.com/datasets/kamilpytlak/personal-key-indicators-of-heart-disease)
 - 데이터 구성 : 40개의 컬럼, 데이터 수 약 44만개
 
 
