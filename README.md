@@ -167,10 +167,6 @@
 | HadKidneyDisease          | 443206 | 2      | No                                                          | 422891 |
 | HadArthritis              | 442499 | 2      | No                                                          | 291351 |
 | HadDiabetes               | 444045 | 4      | No                                                          | 368722 |
-
-
-| Column                     | Count  | Unique | Top                                                         | Freq   |
-|---------------------------|--------|--------|-------------------------------------------------------------|--------|
 | DeafOrHardOfHearing       | 424485 | 2      | No                                                          | 385539 |
 | BlindOrVisionDifficulty   | 423568 | 2      | No                                                          | 399910 |
 | DifficultyConcentrating   | 420892 | 2      | No                                                          | 370792 |
