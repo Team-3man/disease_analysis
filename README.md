@@ -88,7 +88,8 @@
 - COPD(HadCOPD)  
 - 우울장애(HadDepressiveDisorder)  
 - 신장질환(HadKidneyDisease)  
-- 당뇨병(HadDiabetes)  
+- 당뇨병(HadDiabetes)
+- 코로나(CovidPos)
 
 ### 5️⃣ 검사·예방접종 정보
 - HIVTesting  
@@ -119,6 +120,19 @@
   - HadHeartAttack, HadAngina, HadStroke  
   - HadAsthma, HadCOPD  
   - HadDepressiveDisorder, HadKidneyDisease  
-  - HadDiabetes  
+  - HadDiabetes
+  - CovidPos
+
+---
+
+## 1. 데이터 수집 및 로드
+| index | State   | Sex    | GeneralHealth | PhysicalHealthDays | MentalHealthDays | LastCheckupTime                                   | PhysicalActivities | SleepHours | HadHeartAttack | HeightInMeters | WeightInKilograms | BMI   | AlcoholDrinkers | HIVTesting | FluVaxLast12 | PneumoVaxEver | TetanusLast10Tdap                                         | HighRiskLastYear | CovidPos |
+|------:|---------|--------|---------------|---------------------|------------------|----------------------------------------------------|--------------------|------------|----------------|----------------|--------------------|-------|------------------|------------|--------------|----------------|-------------------------------------------------------------|-------------------|----------|
+| 0     | Alabama | Female | Very good     | 0.0                 | 0.0              | Within past year (less than 12 months)            | No                 | 8.0        | No             | NaN            | NaN                | NaN   | No               | No         | Yes          | No             | Yes, received tetanus shot but not sure what type          | No                | No       |
+| 1     | Alabama | Female | Excellent     | 0.0                 | 0.0              | NaN                                                | No                 | 6.0        | No             | 1.60           | 68.04              | 26.57 | No               | No         | No           | No             | No, did not receive any tetanus shot in the past 10 years  | No                | No       |
+| 2     | Alabama | Female | Very good     | 2.0                 | 3.0              | Within past year (less than 12 months)            | Yes                | 5.0        | No             | 1.57           | 63.50              | 25.61 | No               | No         | No           | No             | NaN                                                         | No                | Yes      |
+| 3     | Alabama | Female | Excellent     | 0.0                 | 0.0              | Within past year (less than 12 months)            | Yes                | 7.0        | No             | 1.65           | 63.50              | 23.30 | No               | No         | Yes          | Yes            | No, did not receive any tetanus shot in the past 10 years  | No                | No       |
+| 4     | Alabama | Female | Fair          | 2.0                 | 0.0              | Within past year (less than 12 months)            | Yes                | 9.0        | No             | 1.57           | 53.98              | 21.77 | Yes              | No         | No           | Yes            | No, did not receive any tetanus shot in the past 10 years  | No                | No       |
+
 
 
