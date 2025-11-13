@@ -66,5 +66,128 @@
 
 ---
 
+# 🔎 데이터 정보
 
+### 1️⃣ 기본 인구통계 정보
+- 주(State), 성별(Sex), 인종(RaceEthnicityCategory), 연령대(AgeCategory)
+
+### 2️⃣ 신체 데이터
+- 키(HeightInMeters), 체중(WeightInKilograms), BMI
+
+### 3️⃣ 생활습관 관련 변수
+- 수면시간(SleepHours)  
+- 흡연상태(SmokerStatus), 전자담배(ECigaretteUsage)  
+- 음주여부(AlcoholDrinkers)  
+- 신체활동(PhysicalActivities)  
+
+### 4️⃣ 건강상태 및 질환 정보
+- 심근경색(HadHeartAttack)  
+- 협심증(HadAngina)  
+- 뇌졸중(HadStroke)  
+- 천식(HadAsthma)  
+- COPD(HadCOPD)  
+- 우울장애(HadDepressiveDisorder)  
+- 신장질환(HadKidneyDisease)  
+- 당뇨병(HadDiabetes)
+- 코로나(CovidPos)
+
+### 5️⃣ 검사·예방접종 정보
+- HIVTesting  
+- FluVaxLast12  
+- PneumoVaxEver  
+- TetanusLast10Tdap  
+
+### 6️⃣ 생활불편·정신건강 관련
+- PhysicalHealthDays  
+- MentalHealthDays  
+- GeneralHealth  
+
+---
+
+## 🔍 본 프로젝트에서 주요하게 사용하는 핵심 변수
+
+프로젝트 목적이 “생활습관 → 질병 비율/위험 패턴 분석”이므로  
+40개 중 아래 변수만 핵심 분석 대상으로 사용
+
+- **BMI(체중상태)**
+- **Sex(성별)**
+- **AgeCategory(연령대)**
+- **SleepHours(수면시간)**
+- **SmokerStatus(흡연여부)**
+- **AlcoholDrinkers(음주여부)**
+- **PhysicalActivities(운동 여부)**
+- **8개 주요 질병 변숫값**
+  - HadHeartAttack, HadAngina, HadStroke  
+  - HadAsthma, HadCOPD  
+  - HadDepressiveDisorder, HadKidneyDisease  
+  - HadDiabetes
+  - CovidPos
+
+---
+
+## 1. 데이터 수집 및 로드
+| index | State   | Sex    | GeneralHealth | PhysicalHealthDays | MentalHealthDays | LastCheckupTime                                   | PhysicalActivities | SleepHours | HadHeartAttack | HeightInMeters | WeightInKilograms | BMI   | AlcoholDrinkers | HIVTesting | FluVaxLast12 | PneumoVaxEver | TetanusLast10Tdap                                         | HighRiskLastYear | CovidPos |
+|------:|---------|--------|---------------|---------------------|------------------|----------------------------------------------------|--------------------|------------|----------------|----------------|--------------------|-------|------------------|------------|--------------|----------------|-------------------------------------------------------------|-------------------|----------|
+| 0     | Alabama | Female | Very good     | 0.0                 | 0.0              | Within past year (less than 12 months)            | No                 | 8.0        | No             | NaN            | NaN                | NaN   | No               | No         | Yes          | No             | Yes, received tetanus shot but not sure what type          | No                | No       |
+| 1     | Alabama | Female | Excellent     | 0.0                 | 0.0              | NaN                                                | No                 | 6.0        | No             | 1.60           | 68.04              | 26.57 | No               | No         | No           | No             | No, did not receive any tetanus shot in the past 10 years  | No                | No       |
+| 2     | Alabama | Female | Very good     | 2.0                 | 3.0              | Within past year (less than 12 months)            | Yes                | 5.0        | No             | 1.57           | 63.50              | 25.61 | No               | No         | No           | No             | NaN                                                         | No                | Yes      |
+| 3     | Alabama | Female | Excellent     | 0.0                 | 0.0              | Within past year (less than 12 months)            | Yes                | 7.0        | No             | 1.65           | 63.50              | 23.30 | No               | No         | Yes          | Yes            | No, did not receive any tetanus shot in the past 10 years  | No                | No       |
+| 4     | Alabama | Female | Fair          | 2.0                 | 0.0              | Within past year (less than 12 months)            | Yes                | 9.0        | No             | 1.57           | 53.98              | 21.77 | Yes              | No         | No           | Yes            | No, did not receive any tetanus shot in the past 10 years  | No                | No       |
+
+
+## 2. 데이터구조
+### 수치형 데이터
+| 통계값 | PhysicalHealthDays | MentalHealthDays | SleepHours | HeightInMeters | WeightInKilograms | BMI |
+|--------|---------------------|-------------------|------------|----------------|-------------------|------|
+| **count** | 434,205 | 436,065 | 439,679 | 416,480 | 403,054 | 396,326 |
+| **mean**  | 4.35 | 4.38 | 7.02 | 1.7027 | 83.07 | 28.53 |
+| **std**   | 8.69 | 8.39 | 1.50 | 0.1072 | 21.45 | 6.55 |
+| **min**   | 0.00 | 0.00 | 1.00 | 0.91 | 22.68 | 12.02 |
+| **25%**   | 0.00 | 0.00 | 6.00 | 1.63 | 68.04 | 24.13 |
+| **50%**   | 0.00 | 0.00 | 7.00 | 1.70 | 80.74 | 27.44 |
+| **75%**   | 3.00 | 5.00 | 8.00 | 1.78 | 95.25 | 31.75 |
+| **max**   | 30.00 | 30.00 | 24.00 | 2.41 | 292.57 | 99.64 |
+
+<details>
+<summary>
+<h3>범주형 데이터</h3>
+</summary>
+
+| Column                     | Count  | Unique | Top                                                         | Freq   |
+|---------------------------|--------|--------|-------------------------------------------------------------|--------|
+| State                     | 445132 | 54     | Washington                                                  | 26152  |
+| Sex                       | 445132 | 2      | Female                                                      | 235893 |
+| GeneralHealth             | 443934 | 5      | Very good                                                   | 148444 |
+| LastCheckupTime           | 436824 | 4      | Within past year (anytime less than 12 months ago)         | 350944 |
+| PhysicalActivities        | 444039 | 2      | Yes                                                         | 337559 |
+| RemovedTeeth              | 433772 | 4      | None of them                                                | 233455 |
+| HadHeartAttack            | 442067 | 2      | No                                                          | 416959 |
+| HadAngina                 | 440727 | 2      | No                                                          | 414176 |
+| HadStroke                 | 443575 | 2      | No                                                          | 424336 |
+| HadAsthma                 | 443359 | 2      | No                                                          | 376665 |
+| HadSkinCancer             | 441989 | 2      | No                                                          | 406504 |
+| HadCOPD                   | 442913 | 2      | No                                                          | 407257 |
+| HadDepressiveDisorder     | 442320 | 2      | No                                                          | 350910 |
+| HadKidneyDisease          | 443206 | 2      | No                                                          | 422891 |
+| HadArthritis              | 442499 | 2      | No                                                          | 291351 |
+| HadDiabetes               | 444045 | 4      | No                                                          | 368722 |
+| DeafOrHardOfHearing       | 424485 | 2      | No                                                          | 385539 |
+| BlindOrVisionDifficulty   | 423568 | 2      | No                                                          | 399910 |
+| DifficultyConcentrating   | 420892 | 2      | No                                                          | 370792 |
+| DifficultyWalking         | 421120 | 2      | No                                                          | 353039 |
+| DifficultyDressingBathing | 421217 | 2      | No                                                          | 404404 |
+| DifficultyErrands         | 419476 | 2      | No                                                          | 387029 |
+| SmokerStatus              | 409670 | 4      | Never smoked                                                | 245955 |
+| ECigaretteUsage           | 409472 | 4      | Never used e-cigarettes in my entire life                   | 311988 |
+| ChestScan                 | 389086 | 2      | No                                                          | 223221 |
+| RaceEthnicityCategory     | 431075 | 5      | White only, Non-Hispanic                                    | 320421 |
+| AgeCategory               | 436053 | 13     | Age 65 to 69                                                | 47099  |
+| AlcoholDrinkers           | 398558 | 2      | Yes                                                         | 249919 |
+| HIVTesting                | 379005 | 2      | No                                                          | 209256 |
+| FluVaxLast12              | 398011 | 2      | Yes                                                         | 215604 |
+| PneumoVaxEver             | 368092 | 4      | No                                                          | 121493 |
+| TetanusLast10Tdap         | 362616 | 2      | No, did not receive any tetanus shot in the past 10 years   | 377324 |
+| HighRiskLastYear          | 394509 | 2      | No                                                          | 270055 |
+| CovidPos                  | 394368 | 3      | No                                                          | 270055 |
+</details>
 
