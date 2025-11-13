@@ -135,4 +135,58 @@
 | 4     | Alabama | Female | Fair          | 2.0                 | 0.0              | Within past year (less than 12 months)            | Yes                | 9.0        | No             | 1.57           | 53.98              | 21.77 | Yes              | No         | No           | Yes            | No, did not receive any tetanus shot in the past 10 years  | No                | No       |
 
 
+## 2. 데이터구조
+### 수치형 데이터
+| 통계값 | PhysicalHealthDays | MentalHealthDays | SleepHours | HeightInMeters | WeightInKilograms | BMI |
+|--------|---------------------|-------------------|------------|----------------|-------------------|------|
+| **count** | 434,205 | 436,065 | 439,679 | 416,480 | 403,054 | 396,326 |
+| **mean**  | 4.35 | 4.38 | 7.02 | 1.7027 | 83.07 | 28.53 |
+| **std**   | 8.69 | 8.39 | 1.50 | 0.1072 | 21.45 | 6.55 |
+| **min**   | 0.00 | 0.00 | 1.00 | 0.91 | 22.68 | 12.02 |
+| **25%**   | 0.00 | 0.00 | 6.00 | 1.63 | 68.04 | 24.13 |
+| **50%**   | 0.00 | 0.00 | 7.00 | 1.70 | 80.74 | 27.44 |
+| **75%**   | 3.00 | 5.00 | 8.00 | 1.78 | 95.25 | 31.75 |
+| **max**   | 30.00 | 30.00 | 24.00 | 2.41 | 292.57 | 99.64 |
+
+### 범주형 데이터
+| Column                     | Count  | Unique | Top                                                         | Freq   |
+|---------------------------|--------|--------|-------------------------------------------------------------|--------|
+| State                     | 445132 | 54     | Washington                                                  | 26152  |
+| Sex                       | 445132 | 2      | Female                                                      | 235893 |
+| GeneralHealth             | 443934 | 5      | Very good                                                   | 148444 |
+| LastCheckupTime           | 436824 | 4      | Within past year (anytime less than 12 months ago)         | 350944 |
+| PhysicalActivities        | 444039 | 2      | Yes                                                         | 337559 |
+| RemovedTeeth              | 433772 | 4      | None of them                                                | 233455 |
+| HadHeartAttack            | 442067 | 2      | No                                                          | 416959 |
+| HadAngina                 | 440727 | 2      | No                                                          | 414176 |
+| HadStroke                 | 443575 | 2      | No                                                          | 424336 |
+| HadAsthma                 | 443359 | 2      | No                                                          | 376665 |
+| HadSkinCancer             | 441989 | 2      | No                                                          | 406504 |
+| HadCOPD                   | 442913 | 2      | No                                                          | 407257 |
+| HadDepressiveDisorder     | 442320 | 2      | No                                                          | 350910 |
+| HadKidneyDisease          | 443206 | 2      | No                                                          | 422891 |
+| HadArthritis              | 442499 | 2      | No                                                          | 291351 |
+| HadDiabetes               | 444045 | 4      | No                                                          | 368722 |
+
+
+| Column                     | Count  | Unique | Top                                                         | Freq   |
+|---------------------------|--------|--------|-------------------------------------------------------------|--------|
+| DeafOrHardOfHearing       | 424485 | 2      | No                                                          | 385539 |
+| BlindOrVisionDifficulty   | 423568 | 2      | No                                                          | 399910 |
+| DifficultyConcentrating   | 420892 | 2      | No                                                          | 370792 |
+| DifficultyWalking         | 421120 | 2      | No                                                          | 353039 |
+| DifficultyDressingBathing | 421217 | 2      | No                                                          | 404404 |
+| DifficultyErrands         | 419476 | 2      | No                                                          | 387029 |
+| SmokerStatus              | 409670 | 4      | Never smoked                                                | 245955 |
+| ECigaretteUsage           | 409472 | 4      | Never used e-cigarettes in my entire life                   | 311988 |
+| ChestScan                 | 389086 | 2      | No                                                          | 223221 |
+| RaceEthnicityCategory     | 431075 | 5      | White only, Non-Hispanic                                    | 320421 |
+| AgeCategory               | 436053 | 13     | Age 65 to 69                                                | 47099  |
+| AlcoholDrinkers           | 398558 | 2      | Yes                                                         | 249919 |
+| HIVTesting                | 379005 | 2      | No                                                          | 209256 |
+| FluVaxLast12              | 398011 | 2      | Yes                                                         | 215604 |
+| PneumoVaxEver             | 368092 | 4      | No                                                          | 121493 |
+| TetanusLast10Tdap         | 362616 | 2      | No, did not receive any tetanus shot in the past 10 years   | 377324 |
+| HighRiskLastYear          | 394509 | 2      | No                                                          | 270055 |
+| CovidPos                  | 394368 | 3      | No                                                          | 270055 |
 
